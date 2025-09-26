@@ -1,4 +1,3 @@
-Here’s a polished and more structured version of your README section for **BarterUp**:
 
 ---
 
@@ -25,7 +24,7 @@ Pengguna dapat:
 
 ## 🔗 Links
 
-* 🌍 **Website:** *(Coming Soon)*
+* 🌍 **Website:** 
 * 🎨 **Figma Design:** [BarterUp UI/UX](https://www.figma.com/design/lYIWqe0nbT0xNk9H981UO8/BarterUp?node-id=0-1&t=Ybf9TlAJ77vOTUJk-1)
 * 📊 **Daily Report:** [Google Sheets](https://docs.google.com/spreadsheets/d/1qQpzx4YBnwBmSkLmba1nr45cfDdj6DcfPScmbLHAI0Q/edit?usp=sharing)
 
@@ -71,10 +70,6 @@ Fitur utama:
 * Ambil & update data profil
 * Buat & ambil posting skill
 
----
 
-✨ Dengan **BarterUp**, bertukar skill jadi lebih mudah, cepat, dan menyenangkan!
 
----
 
-Mau saya bikinin juga **README style dengan badge (logo SolidJS, Tailwind, dsb.)** biar makin profesional kayak project GitHub open source?
