@@ -1,0 +1,325 @@
+@source "../../node_modules/flowbite";
+@plugin "flowbite/plugin";
+
+/* ===== BARTERUP ENHANCED ANIMATIONS ===== */
+
+@keyframes skillGlow {
+  0%, 100% { 
+    box-shadow: var(--shadow-glow);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: var(--shadow-glow-strong);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes exchangeRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseGradient {
+  0%, 100% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 110% 110%;
+  }
+}
+
+/* BarterUp Specific Components */
+.barter-exchange-icon,
+.animate-exchange {
+  animation: exchangeRotate 10s linear infinite;
+}
+
+.barter-exchange-icon:hover,
+.animate-exchange:hover {
+  animation: exchangeRotate 2s linear infinite;
+}
+
+.skill-glow {
+  animation: skillGlow 3s ease-in-out infinite;
+}
+
+.gradient-pulse {
+  animation: pulseGradient 4s ease-in-out infinite;
+  background: var(--gradient-text);
+}
+
+/* Enhanced Glass Cards for BarterUp */
+.barter-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.barter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-text);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.barter-card:hover::before {
+  opacity: 1;
+}
+
+.barter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Skill Trading Indicators */
+.trade-indicator {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(76, 224, 210, 0.2), rgba(255, 107, 107, 0.2));
+  border: 1px solid var(--glass-border);
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.trade-indicator::before {
+  content: '⇄';
+  animation: exchangeRotate 2s ease-in-out infinite;
+}
+
+.trade-indicator:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+  background: linear-gradient(135deg, rgba(76, 224, 210, 0.3), rgba(255, 107, 107, 0.3));
+}
+
+/* Modern Form Elements Enhanced */
+.modern-form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.modern-form-group label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: transparent;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.modern-form-group input:focus + label,
+.modern-form-group input:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--primary);
+  background: var(--bg-primary);
+  padding: 0 0.5rem;
+}
+
+.modern-form-group input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.modern-form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(76, 224, 210, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Enhanced Hover Effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Skill Category Indicators */
+.skill-tech {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.skill-creative {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.skill-business {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #000;
+}
+
+.skill-language {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: #000;
+}
+
+.skill-craft {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  color: #000;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .barter-card {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .text-hero {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+  
+  .skill-badge {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Loading Animation for BarterUp */
+.barter-loading {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.barter-loading::before {
+  content: '⇄';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: var(--primary);
+  animation: exchangeRotate 1s linear infinite;
+}
+
+/* Enhanced Scrollbar for BarterUp theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--glass-bg);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-secondary);
+  background-clip: content-box;
+}
+
+/* Interactive Elements */
+.interactive-element {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.interactive-element:active {
+  transform: scale(0.98);
+}
+
+/* Status Indicators */
+.status-online {
+  position: relative;
+}
+
+.status-online::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border: 2px solid #1f2937;
+  border-radius: 50%;
+  animation: skillGlow 2s ease-in-out infinite;
+}
+
+.status-busy {
+  position: relative;
+}
+
+.status-busy::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #f59e0b;
+  border: 2px solid #1f2937;
+  border-radius: 50%;
+}
+
+.status-offline {
+  position: relative;
+  opacity: 0.7;
+}
+
+.status-offline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #6b7280;
+  border: 2px solid #1f2937;
+  border-radius: 50%;
+}
